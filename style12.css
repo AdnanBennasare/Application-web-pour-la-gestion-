@@ -1,0 +1,144 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  
+  .background {
+    /* background: url('img/pic1.png'); */
+    background-image: url("assests/bg2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    color: white;
+    /* width: 100vw; */
+  }
+
+  .heading h1 {
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  .heading {
+    position: absolute;
+    top: 35%;
+    left: 32%;
+  }
+  .heading_name {
+    padding-left: 38%;
+
+  }
+
+
+.link-fornav { 
+  color: rgb(14, 19, 3);
+  
+}
+.li-fornav {
+  width: 78px;
+} 
+small {
+  color: red;
+
+}
+
+.formvalidation-success input,.formvalidation-success select,.formvalidation-success textarea{
+  border: 3px solid rgb(13, 245, 32);
+}
+
+.formvalidation-error input, .formvalidation-error select,.formvalidation-error textarea{
+  border: 3px solid rgb(244, 42, 42);
+}
+
+.formvalid-success input,.formvalid-success select,.formvalid-success textarea{
+  border: 3px solid rgb(13, 245, 32);
+}
+
+.formvalid-error input, .formvalid-error select,.formvalid-error textarea{
+  border: 3px solid rgb(244, 42, 42);
+}
+
+form input {
+  width: 80%;
+  height: 55PX;
+  background: #FFFFFF;
+  border: 0.7px solid #EEEEEE;
+  border-radius: 2px;
+
+}
+.form  {
+  margin-left: 11%;
+
+}
+.form button {
+background-color: #8B7A5B;
+color: aliceblue;
+width: 100%;
+height: 55PX;
+
+} 
+#profiediv {
+  margin-right: 20px;
+}
+#spining {
+  margin-left: 39%;
+}
+.error_msg {
+margin-top: 10px;
+margin-bottom: 10px;
+background-color: rgb(0, 245, 163);
+
+}
+#gotologin {
+
+  margin-top: 10%;
+  cursor: pointer;
+}
+#gotosignup {
+  margin-top: 10%;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* a:link {
+  color: red;
+} */
+
+/* visited link */
+/* a:visited {
+  color: green;
+} */
+
+
+
+
+
+
