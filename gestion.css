@@ -353,13 +353,41 @@ background-color:rgb(31, 29, 29);
 }
 /* end annonce description and contact */
 /* start gallery */
+.splide {
+  margin: 0 auto;
+}
+
+.thumbnails {
+  display: flex;
+  margin: 1rem auto 0;
+  padding: 0;
+  justify-content: center;
+}
+
+.thumbnail {
+  width: 70px;
+  height: 70px;
+  overflow: hidden;
+  list-style: none;
+  margin: 0 0.2rem;
+  cursor: pointer;
+  opacity: 0.3;
+}
+
+.thumbnail.is-active {
+  opacity: 1;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: auto;
+}
 li img ,.splide__slide
 {
 border-radius: 5px !important;
 }
 .slide{
 margin: 0 100px !important;
-background-color: #24262b;
 }
 .slide i
 {
@@ -377,27 +405,6 @@ left: -20px !important;
 {
 position: absolute !important;
 right: -20px !important;
-}
-.thumbnails {
-  display: flex;
-  padding-top: 10px;
-  padding-left: 0;
-}
-.thumbnail {
-  width: 200px;
-  height: 110px;
-  overflow: hidden;
-  list-style: none;
-  margin: 0 0.2rem;
-  cursor: pointer;
-  opacity: 0.3;
-}
-.thumbnail.is-active {
-  opacity: 1;
-}
-.thumbnail img {
-  width: 100%;
-  height: 100px;
 }
 
 /* end gallery */

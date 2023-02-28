@@ -12,9 +12,7 @@ session_start();
   <link rel="stylesheet" href="gestion.css">
   <link rel="stylesheet" href="style12.css">
 
-  <script src="
-https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
-" defer></script>
+
 <link href="
 https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 " rel="stylesheet">
@@ -123,54 +121,40 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 </div>
 <!--end annonce header  -->
 <!--start gallery  -->
-<div>
-  <div class="slide">
-    <section id="main-slider" class="splide" aria-label="My Awesome Gallery">
-      <div style="position:relative;">
-        <div class="splide__arrows">
-          <button class="splide__arrow splide__arrow--prev">
-            <i class="fa-solid fa-angle-left fa-1x"></i>
-          </button>
-          <button class="splide__arrow splide__arrow--next">
-            <i class="fa-solid fa-angle-right fa-1x"></i>
-          </button>
-        </div>
-        <div class="splide__track">
-          <ul class="splide__list">
-            <?php
+<section id="main-carousel" class="splide" aria-label="My Awesome Gallery">
+  <div class="splide__track">
+    <ul class="splide__list">
+    <?php
             $sql_images = "SELECT * FROM images WHERE numero_annouce=:numero_annouce";
             $query_images = $con->prepare($sql_images);
             $query_images->execute(array(':numero_annouce' => $_GET["id"]));
             $results_images = $query_images->fetchAll(PDO::FETCH_ASSOC);
             for ($i = 0; $i < count($results_images); $i++) { ?>
-              <li class="splide__slide">
-                <img src="images/<?php echo $results_images[$i]["image"] ?>" alt="" class="rounded" />
-              </li>
-            <?php
-              # code...
-            }
-            ?>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <ul id="thumbnails" class="thumbnails">
-      <?php
-      include("connect.php");
-      $sql_images1 = "SELECT * FROM images WHERE numero_annouce=:numero_annouce";
-      $query_images1 = $con->prepare($sql_images1);
-      $query_images1->execute(array(':numero_annouce' => $_GET["id"]));
-      $results_images1 = $query_images1->fetchAll(PDO::FETCH_ASSOC);
-      for ($i = 0; $i < count($results_images1); $i++) { ?>
-        <li class="thumbnail">
-          <img src="images/<?php echo $results_images1[$i]["image"] ?>" alt="" />
-        </li>
+      <li class="splide__slide">
+        <img src="images/<?php echo $results_images[$i]["image"] ?>" alt="">
+      </li>
       <?php
       }
       ?>
     </ul>
   </div>
-</div>
+</section>
+
+<ul id="thumbnails" class="thumbnails">
+<?php
+            $sql_images = "SELECT * FROM images WHERE numero_annouce=:numero_annouce";
+            $query_images = $con->prepare($sql_images);
+            $query_images->execute(array(':numero_annouce' => $_GET["id"]));
+            $results_images = $query_images->fetchAll(PDO::FETCH_ASSOC);
+            for ($i = 0; $i < count($results_images); $i++) { ?>
+  <li class="thumbnail">
+    <img src="images/<?php echo $results_images[$i]["image"] ?>" alt="">
+  </li>
+  <?php
+      }
+      ?>
+
+</ul>
 
 <!--end gallery  -->
 <!--start annonce description and contact  -->
@@ -586,8 +570,9 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 
 
 
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@1.3.3/dist/js/splide.min.js"></script>
+<script src="slide.js" ></script>
 
-<script src="slide.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous" ></script>
 <script src="https://kit.fontawesome.com/0f55910cdd.js" crossorigin="anonymous" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
